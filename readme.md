@@ -10,9 +10,9 @@ npm i -D eslint eslint-config-crossing
 
 ## Usage
 
-To use this library as the basis for your ESLint configuration, add the following to your `.eslintrc` or json file:
+To use this library as the basis for your ESLint configuration, configuration similar to this to your `.eslintrc` or json file:
 
-```json
+```jsonc
 {
   "extends": "eslint-config-crossing",
   "rules": {

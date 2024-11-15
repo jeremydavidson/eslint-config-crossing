@@ -69,4 +69,12 @@ module.exports = {
     // ],
     "valid-jsdoc": "off",
   },
+  "overrides": [
+    {
+      "files": ["*.json", "*.jsonc"],
+      "rules": {
+        "comma-dangle": ["error", "never"],
+      },
+    },
+  ],
 }
