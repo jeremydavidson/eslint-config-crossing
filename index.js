@@ -1,5 +1,7 @@
 "use strict"
 
+// // If export module: "test": node --experimental-vm-modules node_modules/.bin/jest
+// export default {
 module.exports = {
   "parser": "@typescript-eslint/parser",
   "env": {
