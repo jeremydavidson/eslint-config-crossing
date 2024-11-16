@@ -1,82 +1,45 @@
-"use strict"
 
-// // If export module: "test": node --experimental-vm-modules node_modules/.bin/jest
-// export default {
-module.exports = {
-  "parser": "@typescript-eslint/parser",
-  "env": {
-    "jest": true,
-    "jest/globals": true,
-  },
-  "plugins": [
-    "jest",
-    "simple-import-sort",
-    "@stylistic/ts",
-  ],
-  "extends": [
-    "google",
-  ],
-  "rules": {
-    "@stylistic/ts/indent": [
-      "error",
-      2,
-      {
-        "ignoredNodes": [
-          "PropertyDefinition[decorators]",
-          "CallExpression[arguments]",
-        ],
-      },
-    ],
-    "@stylistic/ts/quotes": [
-      2,
-      "double",
-    ],
-    "indent": ["error", 2],
-    "max-len": ["error", {
-      code: 180,
-      tabWidth: 2,
-      ignoreUrls: true,
-    }],
-    "new-cap": [
-      "error",
-      {
-        "capIsNew": false,
-      },
-    ],
-    "no-multi-str": "off",
-    "no-trailing-spaces": "error",
-    "object-curly-spacing": [
-      "error",
-      "always",
-    ],
-    "padded-blocks": [
-      "error",
-      {
-        "classes": "always",
-      },
-    ],
-    "quotes": [
-      2,
-      "double",
-    ],
-    "require-jsdoc": "off",
-    "semi": [
-      "error",
-      "never",
-    ],
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    // "sort-imports": [
-    //   "error"
-    // ],
-    "valid-jsdoc": "off",
-  },
-  "overrides": [
-    {
-      "files": ["*.json", "*.jsonc"],
-      "rules": {
-        "comma-dangle": ["error", "never"],
-      },
+
+// import path from "node:path"
+// import { fileURLToPath } from "node:url"
+
+// import { FlatCompat } from "@eslint/eslintrc"
+// import js from "@eslint/js"
+import js from "@eslint/js"
+import stylisticTs from "@stylistic/eslint-plugin-ts"
+import tsParser from "@typescript-eslint/parser"
+import jest from "eslint-plugin-jest"
+import simpleImportSort from "eslint-plugin-simple-import-sort"
+import globals from "globals"
+
+import sharedRules from "./index.rules.js"
+
+// const __filename = fileURLToPath(import.meta.url)
+// const __dirname = path.dirname(__filename)
+// const compat = new FlatCompat({
+//   baseDirectory: __dirname,
+//   recommendedConfig: js.configs.recommended,
+//   allConfig: js.configs.all,
+// })
+
+export default [
+  js.configs.recommended,
+  {
+    plugins: {
+      jest,
+      "simple-import-sort": simpleImportSort,
+      "@stylistic/ts": stylisticTs,
     },
-  ],
-}
+
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+        ...globals.node,
+        ...jest.environments.globals.globals,
+      },
+
+      parser: tsParser,
+    },
+
+    rules: sharedRules,
+  }]

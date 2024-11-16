@@ -1,18 +1,18 @@
+import { ESLint } from "eslint"
 
-const { ESLint } = require("eslint")
-const config = require("./index")
+import flatConfig from "./index"
 
 describe("The config", () => {
 
-  it("is valid eslint config", () => {
+  it("is valid eslint flat config", () => {
     expect(() => {
-      new ESLint({ baseConfig: config })
+      new ESLint({ baseConfig: flatConfig })
     }).not.toThrow()
   })
 
   it("lints the index file", async () => {
-    const eslint = new ESLint({ baseConfig: config })
-    const results = await eslint.lintFiles("./index.js")
+    const eslint = new ESLint({ baseConfig: flatConfig })
+    const results = await eslint.lintFiles("./eslint.config.js")
     expect(results[0].messages).toHaveLength(0)
   })
 
