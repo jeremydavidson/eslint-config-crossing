@@ -6,9 +6,10 @@
     "access": "public"
   },
   "repository": "https://github.com/jeremydavidson/eslint-config-crossing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "files": [
-    "index.js"
+    "index.js",
+    "index.rules.js"
   ],
   "scripts": {
     "lint": "eslint .",
