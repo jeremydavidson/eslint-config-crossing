@@ -1,4 +1,6 @@
-"use strict"
+/**
+ * Base ESLint config
+ */
 
 const sharedRules = require("./index.rules")
 
@@ -10,6 +12,7 @@ module.exports = {
   },
   "plugins": [
     "jest",
+    "no-floating-promise",
     "simple-import-sort",
     "@stylistic/ts",
   ],

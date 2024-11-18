@@ -1,9 +1,14 @@
+/**
+ * Shared eslint rules
+ */
+
 module.exports = {
   "@stylistic/ts/indent": ["error", 2, {
     ignoredNodes: ["PropertyDefinition[decorators]", "CallExpression[arguments]"],
   }],
 
   "@stylistic/ts/quotes": [2, "double"],
+
   "indent": ["error", 2],
 
   "max-len": ["error", {
@@ -14,6 +19,7 @@ module.exports = {
     capIsNew: false,
   }],
 
+  "no-floating-promise/no-floating-promise": "error",
   "no-multi-str": "off",
   "no-trailing-spaces": "error",
 
