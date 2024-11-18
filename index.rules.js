@@ -16,7 +16,10 @@ export default {
 
   "no-multi-str": "off",
   "no-trailing-spaces": "error",
+
+  "object-curly-newline": ["error"],
   "object-curly-spacing": ["error", "always"],
+  "object-property-newline": ["error"],
 
   "padded-blocks": ["error", {
     classes: "always",

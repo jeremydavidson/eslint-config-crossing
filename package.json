@@ -7,7 +7,7 @@
     "access": "public"
   },
   "repository": "https://github.com/jeremydavidson/eslint-config-crossing",
-  "version": "9.15.001",
+  "version": "9.15.002",
   "files": [
     "index.js"
   ],
