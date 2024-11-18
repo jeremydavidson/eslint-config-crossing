@@ -12,7 +12,7 @@ describe("The config", () => {
 
   it("lints the index file", async () => {
     const eslint = new ESLint({ baseConfig: config })
-    const results = await eslint.lintFiles("./index.js")
+    const results = await eslint.lintFiles("./src/index.js")
     expect(results[0].messages).toHaveLength(0)
   })
 

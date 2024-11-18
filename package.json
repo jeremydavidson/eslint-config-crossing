@@ -6,13 +6,13 @@
     "access": "public"
   },
   "repository": "https://github.com/jeremydavidson/eslint-config-crossing",
-  "version": "8.0.2",
+  "version": "8.0.3",
   "files": [
-    "index.js",
-    "index.rules.js"
+    "src/index.js",
+    "src/index.rules.js"
   ],
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . --ext .ts,.js,.json",
     "test": "jest"
   },
   "devDependencies": {
