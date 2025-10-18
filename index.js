@@ -6,8 +6,9 @@ const sharedRules = require("./index.rules")
 
 module.exports = {
   "parser": "@typescript-eslint/parser",
-  "env": { "jest": true,
-    "jest/globals": true },
+  "env": {
+    "jest": true,
+  },
   "plugins": [
     "jest", "no-floating-promise",
     "simple-import-sort",
